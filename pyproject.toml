@@ -1,0 +1,48 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "stealth-fetch"
+version = "0.1.0"
+description = "Production-grade anti-detection HTTP toolkit for Python"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Ben Basche", email = "benbasche@me.com" },
+]
+keywords = [
+    "proxy", "scraping", "anti-detection", "circuit-breaker",
+    "fingerprint", "rate-limiting", "stealth", "bot-detection",
+    "residential-proxy", "web-scraping",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Typing :: Typed",
+]
+
+[project.optional-dependencies]
+redis = ["redis>=4.0"]
+curl = ["curl_cffi>=0.7"]
+httpx = ["httpx>=0.24"]
+all = ["redis>=4.0", "curl_cffi>=0.7", "httpx>=0.24"]
+dev = ["pytest>=7.0", "pytest-asyncio>=0.21", "redis>=4.0", "curl_cffi>=0.7", "httpx>=0.24"]
+
+[project.urls]
+Homepage = "https://github.com/Bbasche/stealth-fetch"
+Repository = "https://github.com/Bbasche/stealth-fetch"
+Issues = "https://github.com/Bbasche/stealth-fetch/issues"
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
